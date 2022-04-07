@@ -19,11 +19,11 @@ blocks:
           - "echo \"done\""
 
   - name: "Smart Promote"
+    secrets:
+      - name: "sem-api-header-caius"
     task:
       jobs:
         - name: "Promote smartly"
-          secrets:
-            - name: "sem-api-header-caius"
           commands:
             - "checkout"
             - ".semaphore/scripts/promote_smartly.sh"
