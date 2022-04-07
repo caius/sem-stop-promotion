@@ -19,9 +19,9 @@ blocks:
           - "echo \"done\""
 
   - name: "Smart Promote"
-    secrets:
-      - name: "sem-api-header-caius"
     task:
+      secrets:
+        - name: "sem-api-header-caius"
       jobs:
         - name: "Promote smartly"
           commands:
