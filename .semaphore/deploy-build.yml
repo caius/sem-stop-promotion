@@ -18,8 +18,9 @@ blocks:
           - "true"
           - "echo \"done\""
 
+after_pipeline:
+  task:
   - name: "Smart Promote"
-    task:
       secrets:
         - name: "sem-api-header-caius"
       jobs:

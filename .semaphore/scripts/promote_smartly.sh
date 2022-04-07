@@ -6,6 +6,11 @@ set -o nounset
 set -o pipefail
 set -o noclobber
 
+if [[ ! "${SEMAPHORE_PIPELINE_RESULT}" = "passed" ]]; then
+  echo "We only promote passed pipelines"
+  exit 0
+fi
+
 promote_smartly="true"
 
 if [[ "${promote_smartly}" = "true" ]]; then
