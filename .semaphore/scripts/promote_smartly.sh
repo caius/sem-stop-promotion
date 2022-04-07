@@ -11,10 +11,11 @@ if [[ ! "${SEMAPHORE_PIPELINE_RESULT}" = "passed" ]]; then
   exit 0
 fi
 
-promote_smartly="true"
+promote_smartly="false"
 
 if [[ "${promote_smartly}" = "true" ]]; then
   curl --fail -H @/tmp/sem-api-header-caius --data "name=Deploy+deploy+deploy&pipeline_id=${SEMAPHORE_PIPELINE_ID}" "${SEMAPHORE_ORGANIZATION_URL}/api/v1alpha/promotions"
 else
   echo "Not promoting deploy"
+  exit 1
 fi
