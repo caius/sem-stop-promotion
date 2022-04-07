@@ -8,6 +8,8 @@ agent:
 promotions:
   - name: "Deploy Prepare"
     pipeline_file: "deploy-build.yml"
+    auto_promote:
+      when: 'true'
 
 blocks:
   - name: "Fake tests"
