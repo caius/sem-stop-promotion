@@ -11,5 +11,6 @@ blocks:
       jobs:
       - name: "Fake build it"
         commands:
+          - "curl -XPATCH --header \"Accept: application/json\" --header \"Content-Type: application/json\" --data '{\"terminate_request\": true}' https://swedishcampground.semaphoreci.com/api/v1alpha/pipelines/${SEMAPHORE_PIPELINE_ID}"
           - "true"
           - "echo \"done\""
