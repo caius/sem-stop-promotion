@@ -1,0 +1,15 @@
+version: "v1.0"
+name: "Fake Pipeline"
+agent:
+  machine:
+    type: "e1-standard-2"
+    os_image: "ubuntu2004"
+
+blocks:
+  - name: "Fake tests"
+    task:
+      jobs:
+      - name: "Fake it, always passes"
+        commands:
+          - "true"
+          - "echo \"done\""
