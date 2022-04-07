@@ -1,19 +1,15 @@
 version: "v1.0"
-name: "Fake Build"
+name: "Deploy Push"
 agent:
   machine:
     type: "e1-standard-2"
     os_image: "ubuntu2004"
 
-promotions:
-  - name: "Deploy deploy deploy"
-    pipeline_file: "deploy-push.yml"
-
 blocks:
-  - name: "Fake build"
+  - name: "Fake tests"
     task:
       jobs:
-      - name: "Fake build it"
+      - name: "Fake it, always passes"
         commands:
           - "true"
           - "echo \"done\""
