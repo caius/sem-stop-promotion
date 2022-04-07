@@ -20,11 +20,10 @@ blocks:
 
 after_pipeline:
   task:
-  - name: "Smart Promote"
-      secrets:
-        - name: "sem-api-header-caius"
-      jobs:
-        - name: "Promote smartly"
-          commands:
-            - "checkout"
-            - ".semaphore/scripts/promote_smartly.sh"
+    secrets:
+      - name: "sem-api-header-caius"
+    jobs:
+      - name: "Promote smartly"
+        commands:
+          - "checkout"
+          - ".semaphore/scripts/promote_smartly.sh"
